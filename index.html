@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    a.button {
+      text-decoration: none;
+      background: #2563eb;
+      padding: 14px 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: white;
+      transition: transform 0.1s ease, background 0.2s ease;
+    }
+    a.button:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mis enlaces</h1>
+
+    <a id="gameLink" class="button" href="#">🎮 Hcon Game</a>
+    <a class="button" href="https://www.erni.com" target="_blank">🌐 ERNI</a>
+    <a class="button" href="https://www.linkedin.com/company/erni" target="_blank">💼 LinkedIn</a>
+    <a class="button" href="https://www.instagram.com/erni_group" target="_blank">📸 Instagram</a>
+    <a class="button" href="https://www.youtube.com/@ERNIgroup" target="_blank">▶️ YouTube</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const baseUrl = 'https://hcongame.vercel.app';
+    const gameLink = document.getElementById('gameLink');
+
+    gameLink.href = id ? `${baseUrl}?id=${encodeURIComponent(id)}` : baseUrl;
+  </script>
+</body>
+</html>
