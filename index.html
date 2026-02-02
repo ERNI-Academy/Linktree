@@ -136,13 +136,24 @@
   <div class="fixed bottom-6 right-6">
     <button
       class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 shadow-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:scale-110 transition-transform"
-      onclick="document.documentElement.classList.toggle('dark')">
+      onclick="toggleDarkMode()">
       <span class="material-icons-outlined text-slate-600 dark:text-yellow-400">dark_mode</span>
     </button>
   </div>
 
 </body>
 <script>
+  // Aplicar modo oscuro guardado al cargar la página
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.documentElement.classList.add('dark');
+  }
+
+  // Función para alternar modo oscuro
+  function toggleDarkMode() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('darkMode', isDark);
+  }
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
