@@ -67,13 +67,14 @@
   <main class="flex-grow container mx-auto px-4 max-w-2xl">
     <div class="space-y-4">
       <a class="link-button game-card flex items-center justify-between w-full p-5 bg-transparent border border-white/30 rounded-xl group text-white"
-        href="#" id="gameLink" target="_blank">
+        href="#" id="gameLink" >
         <div class="flex items-center gap-4">
           <div
             class="w-20 h-20 flex items-center justify-center rounded-full bg-white/30 text-white">
             <span class="material-icons-outlined">sports_esports</span>
           </div>
-          <span class="font-medium text-lg">Play our CTF game Challenge</span>
+          <span class="font-medium text-lg">Play our CTF game Challenge <br> Starting at 5 PM on February 6, 2025</span>
+
         </div>
         <span
           class="material-icons-outlined text-white/100 text-3xl transition-colors">chevron_right</span>
@@ -163,10 +164,9 @@
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
-  const baseUrl = 'https://hcongame.vercel.app';
   const gameLink = document.getElementById('gameLink');
 
-  gameLink.href = id ? `${baseUrl}?id=${encodeURIComponent(id)}` : baseUrl;
+  gameLink.href = `#`;
 </script>
 
 </html>
