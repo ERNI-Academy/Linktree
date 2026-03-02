@@ -51,7 +51,7 @@
 
   .game-card {
     min-height: 13rem;
-    background-image: url("hconbanner.png");
+    background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 100%), url("rootedbanner.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@
             class="w-20 h-20 flex items-center justify-center rounded-full bg-white/30 text-white">
             <span class="material-icons-outlined">sports_esports</span>
           </div>
-          <span class="font-medium text-lg">Play our CTF game Challenge</span>
+          <span class="font-semibold text-lg text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8);">Play our new CTF! <br /> ERNI BOTS V2</span>
         </div>
         <span
           class="material-icons-outlined text-white/100 text-3xl transition-colors">chevron_right</span>
@@ -163,10 +163,10 @@
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
-  const baseUrl = 'https://hcongame.vercel.app';
+  const baseUrl = 'https://ernibots-v2.azurewebsites.net/';
   const gameLink = document.getElementById('gameLink');
 
-  gameLink.href = id ? `${baseUrl}?id=${encodeURIComponent(id)}` : baseUrl;
+  gameLink.href = id ? `${baseUrl}?code=${encodeURIComponent(id)}` : baseUrl;
 </script>
 
 </html>
